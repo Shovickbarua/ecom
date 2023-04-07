@@ -105,10 +105,13 @@
                                         <a href="{{route('offer.index')}}" class="dropdown-item">Offer</a>
                                         <a href="{{route('notice.index')}}" class="dropdown-item">Notice</a>
                                         <a href="{{route('brand.index')}}" class="dropdown-item">Brand</a>
+                                        <a href="{{route('carousal.index')}}" class="dropdown-item">Carousal</a>
                                     </div>                           
                             </div>
                         @endif
-                        <a href="{{route('authenticate')}}" class="nav-item nav-link">Log In</a>
+                        @if(session('name') == NULL)
+                            <a href="{{route('authenticate')}}" class="nav-item nav-link">Log In</a>
+                        @endif
                         <a href="{{route('signout')}}" class="nav-item nav-link"><i class="fas fa-sign-out-alt"></i></a>
                     </div>
                 </nav>
@@ -189,7 +192,7 @@
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="{{asset('/')}}asstes/lib/easing/easing.min.js"></script>
+    <script src="{{asset('/')}}assets/lib/easing/easing.min.js"></script>
     <script src="{{asset('/')}}assets/lib/owlcarousel/owl.carousel.min.js"></script>
 
     <!-- Contact Javascript File -->

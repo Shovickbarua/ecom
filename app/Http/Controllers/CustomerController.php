@@ -6,6 +6,7 @@ use App\Models\Product;
 use App\Models\Offer;
 use App\Models\Notice;
 use App\Models\Brand;
+use App\Models\Carousal;
 use Illuminate\Http\Request;
 
 class CustomerController extends Controller
@@ -16,7 +17,8 @@ class CustomerController extends Controller
         $recents= Product::latest()->take(10)->get();
         $offers= Offer::all();
         $notices= Notice::all();
-        return view('index',compact('categories','recents','offers','notices'));
+        $carousals = Carousal::all();
+        return view('index',compact('categories','recents','offers','notices','carousals'));
     }
     public function shoppage(){
         return view('pages/shop');

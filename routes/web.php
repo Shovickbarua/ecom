@@ -7,6 +7,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\OfferController;
 use App\Http\Controllers\NoticeController;
 use App\Http\Controllers\BrandController;
+use App\Http\Controllers\CarousalController;
 use App\Http\Controllers\Authenticate;
 /*
 |--------------------------------------------------------------------------
@@ -46,6 +47,9 @@ Route::get('/product/show_pro/{id}',[ProductController::class,'pro'])->name('pro
 Route::get('/product/edit_pro/{model}',[ProductController::class,'edit'])->name('edit_pro');
 Route::put('/product/update_pro/{model}',[ProductController::class,'update'])->name('update_pro');
 Route::get('/product/delete/{model}',[ProductController::class,'destroy'])->name('pro_delete');
+
+Route::resource('/carousal',CarousalController::class);
+Route::get('/carousal/delete/{id}',[CarousalController::class,'destroy'])->name('carou_delete');
 
 Route::resource('/category',CategoryController::class);
 Route::get('/category/delete/{id}',[CategoryController::class,'destroy'])->name('cat_delete');
